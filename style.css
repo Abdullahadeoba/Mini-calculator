@@ -44,17 +44,26 @@ form .display input{
 form input.equal{
     width: 145px;
 }
-/* @media (max-width:475px){
+@media (max-width:475px){
     .container{
-        width: 100%;
-        height: 100vh;
+        /* width: 100%;
+        height: 100vh; */
         border: none;
+        height: 250px;
+        width: 250px;
+    }
+    body{
+        overflow-x: hidden;
     }
 }
-@media (min-width:992px){
+@media (min-width:991px){
     .container{
         width: 100%;
         height: 100vh;
         border: none;
+       
     }
-} */
+    body{
+        overflow-x: hidden;
+    }
+}
