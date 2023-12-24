@@ -62,5 +62,6 @@ form input.equal{
     }
     body{
         overflow-x: hidden;
+        overflow-y: hidden;
     }
 }
