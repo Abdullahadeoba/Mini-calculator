@@ -5,48 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Mini calculator</title>
-    <link rel="stylesheet" href="/bootstrap-5.3.2-dist/css/bootstrap.css">
 </head>
 <body>
-   <div class="container-info">
+   <div class="container">
     <div class="calculator">
         <form action="">
-            <h1 class="mb-2 text-decoration-underline text-secondary text-center fw-bolder shadow-lg bg-warning">Calculator</h1>
             <div class="display">
-                <input type="text" name="display" class="bg-info shadow-lg" placeholder="Enter your number" style="font-size: 30px;color:rgb(255, 98, 0)">
+                <input type="text" id="display" disabled>
             </div>
             <div>
-                <input type="button" value="AC" onclick="display.value ='' " >
-                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
-                <input type="button" value="." onclick="display.value +='.' " >
-                <input type="button" value="/" onclick="display.value +='/' " >
-            </div>
-            <div>
-                <input type="button" value="7" onclick="display.value +='7' " >
-                <input type="button" value="8" onclick="display.value +='8' " >
-                <input type="button" value="9" onclick="display.value +='9' " >
-                <input type="button" value="*" onclick="display.value +='*' " >
-            </div>
-            <div>
-                <input type="button" value="4" onclick="display.value +='4' " >
-                <input type="button" value="5" onclick="display.value +='5' " >
-                <input type="button" value="6" onclick="display.value +='6' " >
-                <input type="button" value="-" onclick="display.value +='-' " >
-            </div>
-            <div>
-                <input type="button" value="1" onclick="display.value +='1' " >
-                <input type="button" value="2" onclick="display.value +='2' " >
-                <input type="button" value="3" onclick="display.value +='3' " >
-                <input type="button" value="+" onclick="display.value +='+' " >
-            </div>
-            <div>
-                <input type="button" value="00" onclick="display.value +='00' " >
-                <input type="button" value="0" onclick="display.value +='0' " >
-                <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal">
+                <input type="button" value="AC" onclick="clearDisplay()" >
+                <input type="button" value="DE" onclick="deleteDisplay()" >
+                <input type="button" value="." onclick="displaynum('.')" >
+                <input type="button" value="/" onclick="displaynum('/') " >
+                <br>
+                <input type="button" value="7" onclick="displaynum('7') " >
+                <input type="button" value="8" onclick="displaynum('8') " >
+                <input type="button" value="9" onclick="displaynum('9') " >
+                <input type="button" value="*" onclick="displaynum('*') " >
+                <br>
+                <input type="button" value="4" onclick="displaynum('4') " >
+                <input type="button" value="5" onclick="displaynum('5') " >
+                <input type="button" value="6" onclick="displaynum('6') " >
+                <input type="button" value="-" onclick="displaynum('-') " >
+                <br>
+                <input type="button" value="1" onclick="displaynum('1') " >
+                <input type="button" value="2" onclick="displaynum('2') " >
+                <input type="button" value="3" onclick="displaynum('3') " >
+                <input type="button" value="+" onclick="displaynum('+') " >
+                <br>
+                <input type="button" value="00" onclick="displaynum('00') " >
+                <input type="button" value="0" onclick="displaynum('0') " >
+                <input type="button" value="=" onclick="calculate()" class="equal">
             </div>
         </form>
     </div>
    </div>
-    <!-- <script src="script.js"></script> -->
+   <script>
+    function displaynum(value) {
+      document.getElementById("display").value += value;
+    }
+    function deleteDisplay(){
+      document.getElementById("display").value = display.value.toString().slice(0,-1)
+    }
+    function clearDisplay() {
+      document.getElementById("display").value = "";
+    }
+
+    function calculate() {
+      let expression = document.getElementById("display").value;
+      const result = eval(expression);
+      document.getElementById("display").value = result;
+    }
+  </script>
 </body>
 </html>
