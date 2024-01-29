@@ -9,35 +9,41 @@
 </head>
 <body>
    <div class="containers ">
-    <div class="calculator col-lg-7 col-12">
+    <div class="calculator">
         <form action="">
             <div class="display">
                 <input type="text" id="display" disabled>
             </div>
             <div>
+                <div>
                 <input type="button" value="AC" onclick="clearDisplay()" >
                 <input type="button" value="DE" onclick="deleteDisplay()" >
                 <input type="button" value="." onclick="displaynum('.')" >
                 <input type="button" value="/" onclick="displaynum('/') " >
-                <br>
+                </div>
+                <div>
                 <input type="button" value="7" onclick="displaynum('7') " >
                 <input type="button" value="8" onclick="displaynum('8') " >
                 <input type="button" value="9" onclick="displaynum('9') " >
                 <input type="button" value="*" onclick="displaynum('*') " >
-                <br>
+                </div>
+                <div>
                 <input type="button" value="4" onclick="displaynum('4') " >
                 <input type="button" value="5" onclick="displaynum('5') " >
                 <input type="button" value="6" onclick="displaynum('6') " >
                 <input type="button" value="-" onclick="displaynum('-') " >
-                <br>
+                </div>
+                <div>
                 <input type="button" value="1" onclick="displaynum('1') " >
                 <input type="button" value="2" onclick="displaynum('2') " >
                 <input type="button" value="3" onclick="displaynum('3') " >
                 <input type="button" value="+" onclick="displaynum('+') " >
-                <br>
+                </div>
+                <div>
                 <input type="button" value="00" onclick="displaynum('00') " >
                 <input type="button" value="0" onclick="displaynum('0') " >
                 <input type="button" value="=" onclick="calculate()" class="equal">
+                </div>
             </div>
         </form>
     </div>
